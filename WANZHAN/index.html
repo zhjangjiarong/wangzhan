@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="scss/base.css"/>
+		<script src="js/angular/angular.min.js"></script>
+		<script src="js/angular/angular-ui-router.js"></script>
+		
+	</head>
+	<body ng-app="app" ng-controller="con">
+		<header id="headerzjr">
+			<!--顶部上半部分-->
+			<div>
+				<!--使div居中-->
+				<div>
+					<!--左-->
+				<div>
+					学科网-权威专业教育资源门户
+					<a>关注我们</a>
+						<a><img src="images/jnjs/jnjs_03.png"/></a>
+						<a><img src="images/jnjs/jnjs_05.png"/></a>
+						 |   
+				    <a>论坛</a>	
+				</div>
+				
+				
+					   
+			    
+				
+				</div>
+		    </div>
+		  
+		</header>
+		<!--导航条-->
+		<div id="navzjr">
+			<!--居中-->
+			<div>
+				<img src="images/jnjs/jnjs_10.png"/>
+				<img src="images/jnjs/jnjs_13.png"/>
+				<div id="div">
+				    <a ui-sref="a">首页</a>
+					<a ui-sref="b">新闻动态</a>
+					<a ui-sref="c">产业特侧</a>
+					<a ui-sref="d">产业服务</a>
+					<a ui-sref="f">合作伙伴</a>
+					<a ui-sref="g">联系我们</a>
+					
+				</div>
+			</div>
+		</div>
+		<div>
+			<ui-view></ui-view>
+		</div>
+		
+		<script>
+			var app=angular.module("app",["ui.router"]);
+			app.config(function($urlRouterProvider,$stateProvider){
+				$urlRouterProvider.otherwise("/a")
+				$urlRouterProvider.when("/a")
+				$stateProvider.state("a",{
+					url:"/a",
+					template:"a"
+				})
+				$stateProvider.state("b",{
+					url:"/b",
+					template:"b"
+				})
+				$stateProvider.state("c",{
+					url:"/c",
+					template:"c"
+				})
+				$stateProvider.state("d",{
+					url:"/d",
+					template:"d"
+				})
+				$stateProvider.state("f",{
+					url:"/f",
+					template:"f"
+				})
+				$stateProvider.state("g",{
+					url:"/g",
+					template:"g"
+				})
+			})
+			app.controller("con",function($scope){
+				
+			})
+			var odiv = document.getElementById("div");
+			odiv.style.display="flex";
+			odiv.style.justifyConent="spaceBetween";
+		</script>
+	</body>
+</html>
